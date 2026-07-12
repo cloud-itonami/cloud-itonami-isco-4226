@@ -1,0 +1,11 @@
+[{:itonami.blueprint/id "cloud-itonami-isco-4226"
+  :itonami.blueprint/name "Community Reception Desk"
+  :itonami.blueprint/isco-08 "4226"
+  :itonami.blueprint/domain :office/reception
+  :itonami.blueprint/license "AGPL-3.0-or-later"
+  :itonami.blueprint/social-impact [:local-jobs :service-access :small-business-support]
+  :itonami.blueprint/governor :reception-governor
+  :itonami.blueprint/robotics true
+  :itonami.blueprint/required-technologies [:robotics :identity :forms :dmn :bpmn :audit-ledger]
+  :itonami.blueprint/status :public-oss
+  :db/id -1}]

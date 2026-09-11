@@ -19,7 +19,7 @@ that a slot is free is never trusted. Bad time arithmetic
 (start ≥ end) is equally unapprovable. Also HARD: unregistered
 business, `:effect` other than `:propose`.
 
-**What the desk may do at all** is `src/reception/operations.cljc` — the
+**What the desk may do at all** is `src/reception/operations.cljk` — the
 authority catalog, and the only list of operations in the repo. `:op` is
 deny-by-default: an operation absent from the catalog is refused HARD, so
 neither an advisor naming a new one nor a human approver can widen the

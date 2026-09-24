@@ -9,7 +9,7 @@
   record for it. These tests pin the opposite: an op absent from the catalog
   is refused, and refused HARD (no confidence and no human approver can get
   past it)."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [reception.store :as store]
             [reception.actor :as actor]
             [reception.operations :as operations]

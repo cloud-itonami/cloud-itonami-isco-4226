@@ -1,5 +1,5 @@
 (ns reception.actor-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [reception.actor :as actor]
             [reception.store :as store]))
 

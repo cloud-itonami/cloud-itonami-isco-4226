@@ -1,0 +1,32 @@
+;; What this vertical's robot physically does, declared for
+;; kotoba.robotics.process (kotoba-lang/robotics). `kbb -M:physics` runs it.
+;;
+;; README: receptionists (general) (ISCO 4226) are a Wave-0 cognitive
+;; occupation (no robotics gate); blueprint.edn declares
+;; :itonami.blueprint/robotics true. The physical edge of a front desk is
+;; receiving deliveries: lifting parcels onto the holding shelf, and taking a
+;; cart of parcels to the recipients. These cases declare that edge.
+;;
+;; Every number without a cited source is marked `estimate` in its :basis.
+{:physics/schema "itonami.physical-ai.spec.v1"
+ :repo "cloud-itonami/cloud-itonami-isco-4226"
+ :cases
+ [{:id :parcel-to-holding-shelf
+   :kind :manipulator
+   :procedure "arm lifts a delivered parcel from the reception counter onto the parcel holding shelf"
+   :params {:l1-m 0.60 :l2-m 0.55 :m1-kg 8.0 :m2-kg 6.0
+            :from [0.70 0.10] :to [0.30 0.80] :duration-s 3.0 :steps 600}
+   :sweep {:param :payload-kg :values [1.0 3.0 5.0 10.0 15.0]}
+   :quantity :peak-tau1-nm
+   :limit {:max 150.0 :basis "estimate: continuous shoulder torque of a ~10 kg-class collaborative arm"}
+   :boundary {:lo 0.1 :hi 40.0}}
+  {:id :parcel-cart-stack-height
+   :kind :transport
+   :procedure "robot takes a cart of stacked parcels from reception to the office floor and stops at the lift; stack height sets the centre of gravity"
+   :params {:mass-kg 45.0 :payload-kg 30.0 :distance-m 50.0 :v-max-mps 1.0 :a-max-mps2 0.5
+            :brake-decel-mps2 1.2 :drive-force-n 130.0 :crr 0.02
+            :support-half-length-m 0.25}
+   :sweep {:param :cog-height-m :values [0.5 0.7 0.9 1.1 1.4]}
+   :quantity :min-tipover-margin
+   :limit {:min 0.3 :basis "estimate: keep 30% of the static tip-over moment in reserve for lift thresholds and uneven stacks"}
+   :boundary {:lo 0.2 :hi 2.5}}]}

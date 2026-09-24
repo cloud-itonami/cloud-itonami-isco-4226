@@ -16,7 +16,7 @@
      :stake :low|:medium|:high
      :confidence 0.0-1.0
      :rationale str}"
-  (:require #?(:clj [clojure.edn :as edn] :cljs [cljs.reader :as edn])))
+  (:require #?(:clj [kotoba.lang.edn :as edn] :cljs [cljs.reader :as edn])))
 
 (defprotocol Advisor
   (-advise [advisor store request] "request -> proposal map"))

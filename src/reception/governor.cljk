@@ -1,7 +1,7 @@
 (ns reception.governor
   "ReceptionGovernor — the independent safety/traceability layer for the
   ISCO-08 4226 community reception actor (itonami actor pattern,
-  ADR-2607011000 / CLAUDE.md Actors section). Modeled on
+  ADR-2607011000 / AGENTS.md Actors section). Modeled on
   cloud-itonami-isco-4311's bookkeeping.governor. The reception-specific
   twist: the governor checks slot overlap DETERMINISTICALLY against the
   committed calendar — the advisor's claim that a slot is free is never

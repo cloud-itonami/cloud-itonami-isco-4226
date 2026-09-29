@@ -2,7 +2,7 @@
   "The catalog of reception operations the ISCO-08 4226 community reception
   desk is AUTHORIZED to perform — the actor's authority boundary, and the
   SSoT the governor reads it from (itonami actor pattern, ADR-2607011000 /
-  CLAUDE.md Actors section).
+  AGENTS.md Actors section).
 
   Why this exists as its own component. The governor originally enumerated
   two things about an operation: which ones need a slot
